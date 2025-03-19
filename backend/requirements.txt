@@ -1,7 +1,8 @@
 fastapi
 uvicorn
-pytesseract
+python-multipart
+jinja2
 Pillow
 bcrypt
-python-multipart
-Jinja2
+python-jose
+elasticsearch
