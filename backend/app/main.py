@@ -63,7 +63,8 @@ async def login_post(request: Request, username: str = Form(...), password: str 
     try:
         print(f"Tentativo di login per l'utente: {username}")
         if username and password:
-            if programma._verifica_accesso(username, password):
+            user = programma._verifica_accesso(username, password)
+            if user:
                 print(f"Login riuscito per l'utente: {username}")
                 request.session["username"] = username
                 return RedirectResponse(url="/utente_home", status_code=303)
@@ -124,33 +125,7 @@ async def logout(request: Request):
 
 @app.get("/utente_home")
 async def utente_home(request: Request):
-    try:
-        user = get_current_user(request)
-        if not user:
-            print("Utente non autenticato, reindirizzamento al login")
-            return RedirectResponse(url="/login", status_code=303)
-        
-        print(f"Utente autenticato: {user['username']}")
-        immagini = programma._get_all_immagini()
-        print(f"Immagini recuperate: {len(immagini)}")
-        
-        return templates.TemplateResponse(
-            "utenti/dashboard_utenti.html", 
-            {
-                "request": request, 
-                "user": user, 
-                "immagini": immagini
-            }
-        )
-    except Exception as e:
-        print(f"Errore nel caricamento della dashboard: {str(e)}")
-        return templates.TemplateResponse(
-            "utenti/dashboard_utenti.html", 
-            {
-                "request": request, 
-                "error": f"Errore nel caricamento della dashboard: {str(e)}"
-            }
-        )
+    return templates.TemplateResponse("utenti/dashboard_utenti.html", {"request": request, "user": get_current_user(request)})
 
 @app.post("/upload")
 async def upload_image(request: Request, image: UploadFile = File(...), tag: str = Form(...), descrizione: str = Form(...), titolo: str = Form(...)):
@@ -179,7 +154,7 @@ async def upload_image(request: Request, image: UploadFile = File(...), tag: str
         image_url = "/images/" + image.filename
 
         # Aggiungi le informazioni dell'immagine al database
-        programma._add_immagine(user.id, image_url, tag, descrizione, titolo)
+        programma._add_immagine(user['id'], image_url, tag, descrizione, titolo)
 
         # Rimuovi l'immagine dopo l'analisi
         os.remove(image_path)

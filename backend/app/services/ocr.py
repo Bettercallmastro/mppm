@@ -2,6 +2,15 @@ import sqlite3
 import bcrypt
 import os
 
+class User:
+    def __init__(self, id, username, nome, cognome, email, data_nascita):
+        self.id = id
+        self.username = username
+        self.nome = nome
+        self.cognome = cognome
+        self.email = email
+        self.data_nascita = data_nascita
+
 class Programma:
     def __init__(self, db_name='programma.db'):
         self.db_name = db_name
@@ -90,6 +99,7 @@ class Programma:
         try:
             print(f"Verifica accesso per l'utente: {username}")
             with sqlite3.connect(self.db_name) as conn:
+                conn.row_factory = sqlite3.Row
                 cursor = conn.cursor()
                 cursor.execute('SELECT * FROM users WHERE username = ?', (username,))
                 user = cursor.fetchone()
@@ -97,26 +107,36 @@ class Programma:
                 if user:
                     print(f"Utente trovato nel database: {username}")
                     # Recupera la password hashata dal database
-                    stored_password = user[2]
-                    print(f"Password hashata nel database: {stored_password}")
+                    stored_password = user['password']
                     
                     # Converti la password inserita in bytes
                     password_bytes = password.encode('utf-8')
-                    print(f"Password inserita in bytes: {password_bytes}")
                     
                     # La password nel database è già in formato stringa, quindi dobbiamo convertirla in bytes
                     stored_password_bytes = stored_password.encode('utf-8')
-                    print(f"Password hashata dal database in bytes: {stored_password_bytes}")
                     
                     # Verifica la password
                     is_valid = bcrypt.checkpw(password_bytes, stored_password_bytes)
                     print(f"Verifica password per {username}: {'valida' if is_valid else 'non valida'}")
-                    return is_valid
+                    
+                    if is_valid:
+                        # Converti l'utente in un dizionario
+                        return {
+                            'id': user['id'],
+                            'username': user['username'],
+                            'nome': user['nome'],
+                            'cognome': user['cognome'],
+                            'email': user['email']
+                        }
+                    
+                    return None
+                
                 print(f"Utente non trovato nel database: {username}")
-                return False
+                return None
+        
         except Exception as e:
             print(f"Errore durante la verifica dell'accesso: {e}")
-            return False
+            return None
 
     def _get_user_id(self, username):
         with sqlite3.connect(self.db_name) as conn:
@@ -129,10 +149,21 @@ class Programma:
 
     def _get_user_by_id(self, user_id):
         with sqlite3.connect(self.db_name) as conn:
+            conn.row_factory = sqlite3.Row  # Usa Row factory per accesso per nome
             cursor = conn.cursor()
             cursor.execute('SELECT * FROM users WHERE id = ?', (user_id,))
             user = cursor.fetchone()
-            return user
+            if user:
+                # Converti esplicitamente in dizionario
+                return {
+                    'id': user['id'],
+                    'username': user['username'],
+                    'nome': user['nome'],
+                    'cognome': user['cognome'],
+                    'email': user['email'],
+                    'data_nascita': user['data_nascita']
+                }
+            return None
 
     def _get_all_users(self):
         with sqlite3.connect(self.db_name) as conn:
