@@ -1,0 +1,54 @@
+Struttura del Progetto
+/project-root
+│
+├── /backend                    # Cartella per il backend (FastAPI)
+│   ├── /app
+│   │   ├── __init__.py
+│   │   ├── main.py             # Punto di ingresso del backend
+│   │   ├── /models             # Modelli per il database (pydantic, orm, ecc.)
+│   │   │   └── image.py
+│   │   ├── /schemas            # Schemi Pydantic per le risposte API
+│   │   │   └── image.py
+│   │   ├── /routers            # Moduli FastAPI per le routes
+│   │   │   ├── image.py        # Rotte per le immagini
+│   │   │   ├── auth.py         # Rotte per login e registrazione
+│   │   │   └── user.py         # Rotte per l'utente
+│   │   ├── /services           # Servizi (logica di business, integrazione con Elasticsearch)
+│   │   │   └── elasticsearch.py
+│   │   ├── /static             # File statici, ad esempio immagini caricate
+│   │   ├── /templates          # Template Jinja2 per rendering (se necessario)
+│   │   └── /config.py          # Configurazione generale (DB, Elasticsearch, ecc.)
+│   ├── requirements.txt        # Dipendenze Python (FastAPI, Elasticsearch, etc.)
+│   └── uvicorn_config.py       # Configurazione per Uvicorn
+│
+├── /frontend                   # Cartella per il frontend (React)
+│   ├── /public
+│   │   ├── index.html          # HTML di base
+│   │   ├── favicon.ico         # Favicon
+│   │   └── /images             # Immagini statiche (se necessarie)
+│   ├── /src
+│   │   ├── /components         # Componenti React riutilizzabili
+│   │   │   ├── Header.js       # Header visibile su tutte le pagine
+│   │   │   ├── Footer.js       # Footer visibile su tutte le pagine
+│   │   │   ├── SearchBar.js    # Barra di ricerca
+│   │   │   └── ImageGrid.js    # Griglia di immagini sulla homepage
+│   │   ├── /pages              # Pagine per il routing
+│   │   │   ├── HomePage.js     # Homepage (mostra tutte le immagini)
+│   │   │   ├── ImagePage.js    # Pagina dettaglio immagine
+│   │   │   ├── LoginPage.js    # Pagina di login
+│   │   │   ├── RegisterPage.js # Pagina di registrazione
+│   │   │   └── UserPage.js     # Pagina utente (mostra i propri dati)
+│   │   ├── /api                # Funzioni per interagire con l'API FastAPI
+│   │   │   └── api.js          # File per le chiamate API (login, ricerca, ecc.)
+│   │   ├── App.js              # Componente principale React (contenitore per il router)
+│   │   ├── index.js            # Punto di ingresso di React
+│   │   └── /styles             # File CSS o SCSS per lo styling
+│   │       └── main.css        # Stile globale dell'app
+│   ├── package.json            # Configurazione di npm
+│   ├── .env                    # Variabili d'ambiente (es. API URL)
+│   ├── .gitignore              # Gitignore per evitare file non necessari
+│   └── .eslintrc.js            # Configurazione per l'analisi statica del codice
+│
+├── /static                     # Cartella per file statici generali, come immagini pubbliche
+├── README.md                   # Documentazione del progetto
+└── .gitignore                  # Gitignore per il progetto principale
