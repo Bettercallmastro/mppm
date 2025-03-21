@@ -1,0 +1,135 @@
+[
+    {
+        "id": 1,
+        "nome_file": "Attività Ricreative_MI_PIACE_SCOPRIAMO_1_f41c8e.jpeg",
+        "percorso": "./img_tipizzate\\Attività Ricreative_MI_PIACE_SCOPRIAMO_1_f41c8e.jpeg",
+        "categoria": "Attività Ricreative",
+        "tags": [
+            "scoprire",
+            "divertimento",
+            "attività",
+            "esplorazione",
+            "intrattenimento",
+            "socializzazione",
+            "esperienze",
+            "curiosità",
+            "gioco",
+            "tempo libero"
+        ],
+        "testo_estratto": "MI PIACE SCOPRIAMO"
+    },
+    {
+        "id": 2,
+        "nome_file": "Neuroscienze_SCOPAMI_IL_CERVELLO_2_0a2899.jpeg",
+        "percorso": "./img_tipizzate\\Neuroscienze_SCOPAMI_IL_CERVELLO_2_0a2899.jpeg",
+        "categoria": "Neuroscienze",
+        "tags": [
+            "cervello",
+            "neuroscienze",
+            "scoperta",
+            "ricerca",
+            "cognizione",
+            "psicologia",
+            "funzioni cerebrali",
+            "studi neuroscientifici",
+            "sistema nervoso",
+            "conoscenza"
+        ],
+        "testo_estratto": "SCOPAMI IL CERVELLO"
+    },
+    {
+        "id": 3,
+        "nome_file": "Riflessione sulla vita_È_come_un_cazzo_la_vita_che_vivo_a_volte_diventa_dura_senza_un_motivo_3_f0d4ca.jpeg",
+        "percorso": "./img_tipizzate\\Riflessione sulla vita_È_come_un_cazzo_la_vita_che_vivo_a_volte_diventa_dura_senza_un_motivo_3_f0d4ca.jpeg",
+        "categoria": "Riflessione sulla vita",
+        "tags": [
+            "vita",
+            "difficoltà",
+            "emozioni",
+            "esperienze",
+            "riflessione",
+            "motivazione",
+            "frustrazione",
+            "speranza",
+            "cambiamento",
+            "umanità"
+        ],
+        "testo_estratto": "È come un cazzo la vita che vivo, a volte diventa dura senza un motivo."
+    },
+    {
+        "id": 4,
+        "nome_file": "Relazioni e Amore_AMATE_TROMBATE_SIATE_FELICI_MA_NON_VI_FIDATE_MA_4_2febff.jpeg",
+        "percorso": "./img_tipizzate\\Relazioni e Amore_AMATE_TROMBATE_SIATE_FELICI_MA_NON_VI_FIDATE_MA_4_2febff.jpeg",
+        "categoria": "Relazioni e Amore",
+        "tags": [
+            "amore",
+            "relazioni",
+            "felicità",
+            "fiducia",
+            "vita",
+            "divertimento",
+            "sentimenti",
+            "consigli",
+            "sesso",
+            "emozioni"
+        ],
+        "testo_estratto": "AMATE, TROMBATE, SIATE FELICI! MA NON VI FIDATE MA!"
+    },
+    {
+        "id": 5,
+        "nome_file": "Relazioni personali_AVREI_PROPRIO_BISOGNO_DI_UNA_BELLA_SCOPATA_CON_TE_5_bd641a.jpeg",
+        "percorso": "./img_tipizzate\\Relazioni personali_AVREI_PROPRIO_BISOGNO_DI_UNA_BELLA_SCOPATA_CON_TE_5_bd641a.jpeg",
+        "categoria": "Relazioni personali",
+        "tags": [
+            "relazioni",
+            "incontri",
+            "desiderio",
+            "intimità",
+            "sessualità",
+            "attrazione",
+            "passione",
+            "comunicazione",
+            "appuntamenti",
+            "emozioni"
+        ],
+        "testo_estratto": "AVREI PROPRIO BISOGNO DI UNA BELLA SCOPATA CON TE"
+    },
+    {
+        "id": 6,
+        "nome_file": "Relazioni_NON_TROVO_UNA_FRASE_ROMANTICA_PERÒ_TI_VOGLIO_SCOPARE_6_fcf670.jpeg",
+        "percorso": "./img_tipizzate\\Relazioni_NON_TROVO_UNA_FRASE_ROMANTICA_PERÒ_TI_VOGLIO_SCOPARE_6_fcf670.jpeg",
+        "categoria": "Relazioni",
+        "tags": [
+            "romanticismo",
+            "desiderio",
+            "passione",
+            "relazioni",
+            "linguaggio colloquiale",
+            "esplicito",
+            "attrazione",
+            "seduzione",
+            "intimità",
+            "umorismo"
+        ],
+        "testo_estratto": "NON TROVO UNA FRASE ROMANTICA PERÒ TI VOGLIO SCOPARE"
+    },
+    {
+        "id": 7,
+        "nome_file": "Social Media_SEGUI_LA_PAGINA_IN_DESCRIZIONE_PER_ALTRE_FRASI_PROIBITE_7_5e85cc.jpeg",
+        "percorso": "./img_tipizzate\\Social Media_SEGUI_LA_PAGINA_IN_DESCRIZIONE_PER_ALTRE_FRASI_PROIBITE_7_5e85cc.jpeg",
+        "categoria": "Social Media",
+        "tags": [
+            "seguire",
+            "pagina",
+            "descrizione",
+            "frasi proibite",
+            "social",
+            "community",
+            "online",
+            "contenuti",
+            "informazioni",
+            "rete"
+        ],
+        "testo_estratto": "SEGUI  \nLA PAGINA  \nIN DESCRIZIONE  \nPER ALTRE  \nFRASI PROIBITE"
+    }
+]
